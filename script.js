@@ -1,3 +1,10 @@
+const body = document.querySelector('body');
+const AnimationContainerVar = {
+    animationLoadContainer: document.querySelector('.animation-load-container'),
+    linearInnerAnimation: document.querySelector('.linear-inner-animation')
+};
+const {animationLoadContainer, linearInnerAnimation} = AnimationContainerVar;
+
 const SearchInputVar = {
     optTitle: document.querySelector('.option-title'),
     searchItems: document.querySelectorAll('.search-items')
@@ -12,6 +19,7 @@ const ProjectLanguages = {
 const {websiteProj, javascriptProj, reactProj} = ProjectLanguages;
 // ---
 const mainProjectCardBoxesContainer = document.querySelector('.main-project-card-boxes-container');
+
 const ProjectCardBoxVar = {
     projectCardBox: document.querySelectorAll('.project-card-box'),
     cardBoxNumbers: document.querySelectorAll('.card-box-number')
@@ -21,6 +29,24 @@ const {projectCardBox, cardBoxNumbers} = ProjectCardBoxVar;
 
 class SearchBarSystem {
     constructor(){}
+
+    AnimationSystem() {
+        window.addEventListener('load', ()=> {
+            let n = 0;
+            let linearInterval = setInterval(() => {
+                $(linearInnerAnimation).css('width', `${n+=25}%`);
+                console.log(n);
+                n == 100 ? clearInterval(linearInterval) : linearInterval;
+            }, 1000);
+            
+            $(body).css('overflow', 'hidden');
+
+            setTimeout(()=> {
+                $(body).css('overflow', 'visible');
+                animationLoadContainer.classList.add('animation-load-container-class-list');
+            }, 5000);
+        });
+    }
 
     ImgSystem() {
         let imgs = [
@@ -47,7 +73,7 @@ class SearchBarSystem {
         }
     }
 
-    CardBoxNumbersMethod() {
+    CardBoxNumbersSystem() {
         for (let i = 0; i < cardBoxNumbers.length; i++) {
             const element = cardBoxNumbers[i];
             element.textContent = i+1;
@@ -152,8 +178,9 @@ class SearchBarSystem {
 const SBS = new SearchBarSystem();
 
 const ClassMethodControlSystem = ()=> {
+    SBS.AnimationSystem();
     SBS.ImgSystem();
-    SBS.CardBoxNumbersMethod();
+    SBS.CardBoxNumbersSystem();
     SBS.OptionItem();
     SBS.SearchItem1();
     SBS.SearchItem2();

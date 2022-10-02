@@ -6,6 +6,13 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+var body = document.querySelector('body');
+var AnimationContainerVar = {
+  animationLoadContainer: document.querySelector('.animation-load-container'),
+  linearInnerAnimation: document.querySelector('.linear-inner-animation')
+};
+var animationLoadContainer = AnimationContainerVar.animationLoadContainer,
+    linearInnerAnimation = AnimationContainerVar.linearInnerAnimation;
 var SearchInputVar = {
   optTitle: document.querySelector('.option-title'),
   searchItems: document.querySelectorAll('.search-items')
@@ -38,6 +45,23 @@ function () {
   }
 
   _createClass(SearchBarSystem, [{
+    key: "AnimationSystem",
+    value: function AnimationSystem() {
+      window.addEventListener('load', function () {
+        var n = 0;
+        var linearInterval = setInterval(function () {
+          $(linearInnerAnimation).css('width', "".concat(n += 25, "%"));
+          console.log(n);
+          n == 100 ? clearInterval(linearInterval) : linearInterval;
+        }, 1000);
+        $(body).css('overflow', 'hidden');
+        setTimeout(function () {
+          $(body).css('overflow', 'visible');
+          animationLoadContainer.classList.add('animation-load-container-class-list');
+        }, 5000);
+      });
+    }
+  }, {
     key: "ImgSystem",
     value: function ImgSystem() {
       var imgs = [// Websites
@@ -57,8 +81,8 @@ function () {
       }
     }
   }, {
-    key: "CardBoxNumbersMethod",
-    value: function CardBoxNumbersMethod() {
+    key: "CardBoxNumbersSystem",
+    value: function CardBoxNumbersSystem() {
       for (var i = 0; i < cardBoxNumbers.length; i++) {
         var element = cardBoxNumbers[i];
         element.textContent = i + 1;
@@ -169,8 +193,9 @@ function () {
 var SBS = new SearchBarSystem();
 
 var ClassMethodControlSystem = function ClassMethodControlSystem() {
+  SBS.AnimationSystem();
   SBS.ImgSystem();
-  SBS.CardBoxNumbersMethod();
+  SBS.CardBoxNumbersSystem();
   SBS.OptionItem();
   SBS.SearchItem1();
   SBS.SearchItem2();
