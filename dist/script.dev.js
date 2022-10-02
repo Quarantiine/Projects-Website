@@ -47,11 +47,10 @@ function () {
 
       for (var i = 0; i < imgs.length; i++) {
         var element = imgs[i];
-        var misImg = 'imgs/mis-img.jpg';
         projectCardBox[i].style.backgroundImage = "url(".concat(element, ")");
 
         if (!projectCardBox[i].style.backgroundImage == "imgs/card-box-img-".concat(i, ".jpg")) {
-          projectCardBox[i].style.backgroundImage = "url(".concat(misImg, ")");
+          projectCardBox[i].style.backgroundImage = "url(imgs/mis-img.jpg)";
         } else {
           projectCardBox[i].style.backgroundImage = "url(".concat(element, ")");
         }

@@ -37,11 +37,10 @@ class SearchBarSystem {
 
         for (let i = 0; i < imgs.length; i++) {
             const element = imgs[i];
-            const misImg = 'imgs/mis-img.jpg'; 
             projectCardBox[i].style.backgroundImage = `url(${element})`;
             
             if (!projectCardBox[i].style.backgroundImage == `imgs/card-box-img-${i}.jpg`) {
-                projectCardBox[i].style.backgroundImage = `url(${misImg})`;
+                projectCardBox[i].style.backgroundImage = `url(imgs/mis-img.jpg)`;
             } else {
                 projectCardBox[i].style.backgroundImage = `url(${element})`;
             }
