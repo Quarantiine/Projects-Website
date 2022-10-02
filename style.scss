@@ -255,12 +255,14 @@ body {
 					opacity: 1;
 					overflow: visible;
 					position: relative;
+					z-index: 2;
 				}
 
 				.project-card-box-class-list-disable {
 					opacity: 0;
 					overflow: hidden;
 					position: absolute;
+					z-index: 1;
 				}
 			}
 
