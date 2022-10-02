@@ -136,7 +136,7 @@ body {
 }
 .div-body .main-content-container .main-projects-container .main-project-card-boxes-container .project-card-box {
   justify-content: center;
-  background-image: url("/imgs/mis-img.jpg");
+  background-image: url("imgs/mis-img.jpg");
   background-size: cover;
   background-position: center;
   width: 300px;

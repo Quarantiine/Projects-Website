@@ -154,7 +154,7 @@ body {
 				.project-card-box {
 					@extend %display-flex-template;
 					justify-content: center;
-					background-image: url('/imgs/mis-img.jpg');
+					background-image: url('imgs/mis-img.jpg');
 					background-size: cover;
 					background-position: center;
 					width: 300px;
