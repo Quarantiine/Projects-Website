@@ -121,9 +121,18 @@ body {
 
 		%linear-animation-template {
 			border-radius: 20px;
-			width: 300px;
+			width: 500px;
 			height: 10px;
 			background-color: #444;
+		}
+
+		@media screen and (max-width: 1000px) {
+			%linear-animation-template {
+				border-radius: 20px;
+				width: 300px;
+				height: 10px;
+				background-color: #444;
+			}
 		}
 	
 		.linear-animation {

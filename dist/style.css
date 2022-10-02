@@ -110,9 +110,17 @@ body {
 }
 .animation-load-container .animation-load-content .linear-animation .linear-inner-animation, .animation-load-container .animation-load-content .linear-animation {
   border-radius: 20px;
-  width: 300px;
+  width: 500px;
   height: 10px;
   background-color: #444;
+}
+@media screen and (max-width: 1000px) {
+  .animation-load-container .animation-load-content .linear-animation .linear-inner-animation, .animation-load-container .animation-load-content .linear-animation {
+    border-radius: 20px;
+    width: 300px;
+    height: 10px;
+    background-color: #444;
+  }
 }
 .animation-load-container .animation-load-content .linear-animation {
   margin: 10px auto;
