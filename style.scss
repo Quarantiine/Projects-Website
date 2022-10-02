@@ -256,6 +256,7 @@ body {
 					overflow: visible;
 					position: relative;
 					z-index: 2;
+					width: 300px;
 				}
 
 				.project-card-box-class-list-disable {
@@ -263,6 +264,7 @@ body {
 					overflow: hidden;
 					position: absolute;
 					z-index: 1;
+					width: 0px;
 				}
 			}
 

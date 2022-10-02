@@ -223,12 +223,14 @@ body {
   overflow: visible;
   position: relative;
   z-index: 2;
+  width: 300px;
 }
 .div-body .main-content-container .main-projects-container .main-project-card-boxes-container .project-card-box-class-list-disable {
   opacity: 0;
   overflow: hidden;
   position: absolute;
   z-index: 1;
+  width: 0px;
 }
 @media screen and (max-width: 1070px) {
   .div-body .main-content-container .main-projects-container .main-project-card-boxes-container {
